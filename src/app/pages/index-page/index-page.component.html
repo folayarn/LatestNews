@@ -1,0 +1,34 @@
+<div *ngIf="error else name" class="content">
+
+    <div>
+        <span>Error Occured!! Please Reload</span>
+    </div>
+
+
+
+</div>
+
+<ng-template #name>
+    <div class="container">
+        <app-sub-header title="Breaking News">
+        </app-sub-header>
+        <div class="col m12">
+            <div class="row">
+                <app-card *ngFor="let item of data.results" title="{{item.title}}" image_url="{{item.image_url}}" link="{{item.link}}" description="{{item.description}}">
+
+                </app-card>
+
+            </div>
+            <app-sub-header title="Top Story"></app-sub-header>
+            <div class="row">
+                <app-card *ngFor="let item of top.results" title="{{item.title}}" image_url="{{item.image_url}}" link="{{item.link}}" description="{{item.description}}">
+
+
+
+                </app-card>
+
+            </div>
+        </div>
+    </div>
+
+</ng-template>
