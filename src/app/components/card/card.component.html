@@ -1,0 +1,13 @@
+<div class="card col m6" [ngStyle]="{'margin':'20px 0px'}">
+    <div class="card-image">
+        <img *ngIf="image_url" src="{{image_url}}" class="img-responsive">
+        <span *ngIf="image_url" class="card-title">{{title.substring(0,50)}}...</span>
+    </div>
+    <div class="card-content">
+        <span *ngIf="!image_url" class="card-title">{{title.substring(0,50)}}...</span>
+        <p>{{description.substring(0, 100)}}...</p>
+    </div>
+    <div class="card-action">
+        <a href="{{link}}">Read More</a>
+    </div>
+</div>
