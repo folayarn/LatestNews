@@ -10,6 +10,8 @@ import { CardComponent } from './components/card/card.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { NewsByCountryComponent } from './pages/news-by-country/news-by-country.component';
+import { SearchComponentComponent } from './components/search-component/search-component.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { NewsByCountryComponent } from './pages/news-by-country/news-by-country.
     CardComponent,
     CategoryPageComponent,
     IndexPageComponent,
-    NewsByCountryComponent
+    NewsByCountryComponent,
+    SearchComponentComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

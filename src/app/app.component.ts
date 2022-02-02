@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 isOpen:boolean=false
+  open: boolean=false;
   constructor(){}
 ngOnInit():void{
 }
@@ -66,4 +67,7 @@ Category:Array<any>=['business',
       console.log(this.isOpen)
     }
 
+    setDrawer(){
+      this.open=!this.open
+    }
 }

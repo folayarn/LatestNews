@@ -26,4 +26,8 @@ url:string=`https://newsdata.io/api/1/news?apikey=${this.api_key}`
   getNewsByCountry(name:string):Observable<any>{
     return this.http.get(`${this.url}&country=${name}`)
   }
+  searchDb(value:string):Observable<any>{
+
+    return this.http.get(`${this.url}&q=${value}`)
+  }
 }

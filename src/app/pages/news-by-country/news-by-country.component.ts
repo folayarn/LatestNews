@@ -12,11 +12,12 @@ country:any
 data:any
 error:any
   constructor(private http:HttpService, private route:ActivatedRoute) {
-    this.country= route.snapshot.params['category'];
+    this.country= route.snapshot.params['country'];
+
   }
 
   ngOnInit(): void {
-    this.http.getNewsCategory(this.country).subscribe(data => {
+    this.http.getNewsByCountry(this.country).subscribe(data => {
       this.data=data.results;
     },err=>{
       this.error=true
