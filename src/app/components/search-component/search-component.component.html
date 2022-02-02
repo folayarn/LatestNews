@@ -1,0 +1,39 @@
+<div class="col m12">
+    <div class="row">
+        <div class="col m3"></div>
+        <div class="col m6 s12">
+            <div class="content_display">
+                <div class="input-container">
+                    <i class="small material-icons">search</i>
+
+                    <input [(ngModel)]="search" name="search" (ngModelChange)="onChange($event)" type="text" placeholder="search here">
+                </div>
+                <div *ngIf="show" class="search_display">
+                    <div *ngIf="error else name" class="error">
+                        <span>Fetch error</span>
+                    </div>
+                    <ng-template #name>
+                        <a *ngFor="let item of data" href="{{item.link}}">
+                            <div class="card" [ngStyle]="{'margin':'20px 0px'}">
+                                <div class="card-image">
+                                    <img *ngIf="item.image_url" src="{{item.image_url}}" class="img-responsive">
+                                    <span *ngIf="item.image_url" class="card-title">{{item.title.substring(0,50)}}...</span>
+                                </div>
+                                <div class="card-content">
+                                    <span *ngIf="!item.image_url" class="card-title">{{item.title.substring(0,50)}}...</span>
+                                    <p>{{item.description.substring(0, 100)}}...</p>
+                                </div>
+
+                            </div>
+                        </a>
+                    </ng-template>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col m3"></div>
+    </div>
+</div>

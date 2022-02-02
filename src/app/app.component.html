@@ -1,4 +1,16 @@
 <div class="col s12 m12 l12">
+    <div *ngIf="open" class="app_drawer hide-on-med-and-up">
+        <div class="drawer_header">
+            <i class="small material-icons" (click)="setDrawer()">close</i>
+            <h2>NewPara</h2>
+        </div>
+        <ul class="collection">
+
+            <li class="collection-item" (click)="setDrawer()" *ngFor="let item of Category">
+                <a href="category/{{item}}">{{item}}</a></li>
+
+        </ul>
+    </div>
     <nav>
         <div class="nav-wrapper">
             <a href="" routerLink="/" class="brand-logo">NewsPara.com</a>
@@ -7,12 +19,15 @@
 
                 <li (click)="onClick()"><a class="">
                   Languages<i class="material-icons right">arrow_drop_down</i></a></li>
+
             </ul>
+            <i class="small material-icons hide-on-med-and-up" (click)="setDrawer()">menu</i>
         </div>
     </nav>
     <ul *ngIf="isOpen" class="dropdown-wrapper">
-        <li *ngFor="let lan of searchData"><a href="/category/{{lan.name}}">{{lan.name}}</a></li>
+        <li *ngFor="let lan of searchData"><a href="/country/{{lan.value}}">{{lan.name}}</a></li>
 
     </ul>
+    <app-search-component></app-search-component>
     <router-outlet></router-outlet>
 </div>
